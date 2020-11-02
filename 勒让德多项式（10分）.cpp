@@ -1,0 +1,13 @@
+#include <stdio.h>
+float P(int a,float b){
+	if(a==0)return 1.00;
+	if(a==1)return b;
+	if(a>1)return (((2*a-1)*1.0/a*b*P(a-1,b))-((a-1)*1.0/a*P(a-2,b)));
+}
+int main(){
+	float x;
+	int n;
+	scanf("%f%d",&x,&n);
+	printf("%.2f\n",P(n,x));
+	return 0;
+}
